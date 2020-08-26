@@ -1,2 +1,4 @@
 *.code-workspace
 /Natours/starter/node_modules
+/Marmi
+.DS_store
