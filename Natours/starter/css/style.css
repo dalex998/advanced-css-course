@@ -1,73 +1,3 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  /*the most important part, height and width is computed 
-  taking into account also paddings and borders*/
-  box-sizing: inherit; }
-
-html {
-  font-size: 62.5%;
-  /*10px because of the browser font size default 16px*/ }
-
-body {
-  /* If the browser doesn't support the first font, will try the next one */
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.7;
-  color: #777;
-  padding: 3rem;
-  /*applied to the entire webpage*/
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  /*95% of the viewport*/
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /*ensures that the top of the image rests the same*/
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  position: relative; }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /*no longer in relation with the parent but with the element itself*/
-    transform: translate(-50%, -50%);
-    text-align: center; }
-  .header__logo {
-    height: 3.5rem;
-    /*the width will be figured out by the browser*/ }
-
-.heading-primary {
-  color: white;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /*the element will not shake at the end*/
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 700;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out; }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-    /*css will figure out the properties by itself*/ }
-
 @keyframes moveInLeft {
   /*start*/
   0% {
@@ -93,6 +23,65 @@ body {
     opacity: 1;
     transform: translate(0);
     /*exaclty the way it looks now*/ } }
+
+@keyframes moveInBottom {
+  /*start*/
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  /*finish*/
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    /*exaclty the way it looks now*/ } }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /*the most important part, height and width is computed 
+  taking into account also paddings and borders*/
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%;
+  /*10px because of the browser font size default 16px*/ }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  /* If the browser doesn't support the first font, will try the next one */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  /*applied to the entire webpage*/ }
+
+.heading-primary {
+  color: white;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /*the element will not shake at the end*/
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out;
+    /*css will figure out the properties by itself*/ }
 
 .btn {
   /*we want to see this when we hover the button*/ }
@@ -136,13 +125,26 @@ body {
     animation-fill-mode: backwards;
     /*automatically apply style of 0% before animation starts*/ }
 
-@keyframes moveInBottom {
-  /*start*/
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  /*finish*/
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    /*exaclty the way it looks now*/ } }
+.header {
+  height: 95vh;
+  /*95% of the viewport*/
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*ensures that the top of the image rests the same*/
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /*no longer in relation with the parent but with the element itself*/
+    transform: translate(-50%, -50%);
+    text-align: center; }
+  .header__logo {
+    height: 3.5rem;
+    /*the width will be figured out by the browser*/ }

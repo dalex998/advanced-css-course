@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /*the most important part, height and width is computed 
+  taking into account also paddings and borders*/
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /*10px because of the browser font size default 16px*/
+}
+
+body {
+  box-sizing: border-box;
+}
