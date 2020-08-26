@@ -2,7 +2,7 @@
   /*if we have enough width then get the value otherwise
     fill 100% of available space*/
   max-width: $grid-width;
-  background-color: #eee;
+  //background-color: #eee;
   /*trick to center block elements inside another block elements */
   /*automatic margins mean that the browser will figure out left and right margin (same)*/
   margin: 0 auto;
@@ -15,7 +15,7 @@
 
   /*selecrt all the elements that start with "col-"*/
   [class^="col-"] {
-    background-color: orangered;
+    //  background-color: orangered;
     float: left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
